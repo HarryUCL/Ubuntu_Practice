@@ -1,0 +1,15 @@
+1.
+终端一
+持续追踪group.txt的文末内容
+输入：tail -F group.txt
+终端二
+往group.txt写入hello
+输入：echo hello >> group.txt
+终端一
+输出：hello （本追踪进程继续）
+查询tail进程
+输入：ps -ef | grep tail
+hamster   127771  127322  0 05:01 pts/1    00:00:00 tail -F goup.txt
+删除进程
+kill 127771
+终端一：追踪进程结束

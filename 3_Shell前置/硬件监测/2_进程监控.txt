@@ -1,0 +1,39 @@
+1.
+查看进程（前端）
+输入：ps
+
+2.
+查看进程（所有，父子进程版）
+输入：ps -ef
+输出（取样）：
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 11月23 ?      00:00:30 /lib/systemd/systemd --system --deserialize 57 splash
+PID是内存名
+PPID是父进程名
+I/O密集型：C越小，越优先
+CPU密集型：C越大
+kill父进程也会kill子进程
+
+3.
+进程状态：
+R：运行
+S：睡眠
+T：停止状态
+s：包含子进程
++:位于后台
+%CPU是CPU时间占比
+%MEM是内存的占比
+查看所有进程，资源占用
+输入：ps -aux
+输出:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.3 168064 13640 ?        Ss   11月23   0:30 /lib/systemd/systemd --system --deserialize 57 splash
+
+4.
+查看进程26992
+输入：
+ps -aux | grep 26992
+输出：
+hamster   127654  0.0  0.0  12192  2640 pts/1    S+   04:42   0:00 grep --color=auto 26992
+
+5.

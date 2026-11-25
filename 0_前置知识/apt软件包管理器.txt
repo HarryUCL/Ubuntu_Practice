@@ -1,0 +1,4 @@
+下载net-tools
+sudo apt net-tools
+删除net-tools
+sudo apt remove net-tools

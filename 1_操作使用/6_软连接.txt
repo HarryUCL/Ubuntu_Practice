@@ -1,0 +1,10 @@
+借助软连接，linux可以在特定地址直接访问特定文件（快捷方式）
+位置为~，为绝对路径建立软连接
+ln -s /home/hamster/桌面/大话西游/qvjing/tudi/songwukong.txt ./猴哥
+此时在桌面，可以找到一个快捷方式“猴哥”,指向/home/hamster/桌面/大话西游/qvjing/tudi/songwukong.txt
+
+删除软连接
+rm -rf 猴哥
+
+直接打开软连接
+cat 猴哥

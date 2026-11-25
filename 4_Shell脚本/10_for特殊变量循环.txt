@@ -1,0 +1,24 @@
+输入：vim for2.sh
+写入：
+#!/bin/bash
+echo '========$*========'
+for i in $*
+do
+	echo "班长喜欢$i"
+done
+echo '========$@========'
+for j in $@
+do
+	echo "班长喜欢$@"
+done
+
+hamster@ubuntu:~$ ./for3.sh cls xls kls
+========$*========
+班长喜欢cls
+班长喜欢xls
+班长喜欢kls
+========$@========
+班长喜欢cls xls kls
+班长喜欢cls xls kls
+班长喜欢cls xls kls
+

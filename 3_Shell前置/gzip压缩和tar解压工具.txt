@@ -1,0 +1,22 @@
+1.
+gzip压缩，删除原文件：
+输入：gzip profile
+输出：profile.gz
+
+2.
+gunzip解压
+输入：gunzip profile.gz
+输出：profile
+
+3.
+tar命令打包文件
+zvcf：打包压缩+显示详细信息+产生.tar打包文件+指定压缩后的文件名
+将group.txt，大话西游/，profile打包一起压缩
+输入：tar -zvcf 1.tar.gz profile group.txt 大话西游/
+输出：1.tar.gz
+
+4.
+tar命令打包文件
+zxvf：打包压缩+解包tar文件+显示压缩后的文件名+指定压缩后的文件名
+输入：tar -zxvf 1.tar.gz
+输出：解压且保留1.tar.gz

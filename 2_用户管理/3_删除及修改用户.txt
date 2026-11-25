@@ -1,0 +1,12 @@
+删除用户但保存主目录:
+userdel
+输入：sudo usedel tangseng
+
+修改用户
+usermod
+-l:改变用户名
+-d:修改家目录
+
+修改user id：从meihouwang到sunwukong
+输入：sudo usermod -l meihouwang sunwukong
+输出：sudo usermod -d /home/meihouwang -m meihouwang

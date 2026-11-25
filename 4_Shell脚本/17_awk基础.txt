@@ -1,0 +1,73 @@
+查看passwd文件的root项目的第7列
+输入：cat passwd | grep root | cut -d ":" -f 7
+输出：/bin/bash
+/usr/sbin/nologin
+
+1.
+awk解析方法
+-F：指定文件分隔符
+-v：赋值用户定义变量
+搜索passwd文件的root关键字开头的所有行的第7列
+输入：awk -F : '/^root/{print$7}' passwd
+输出：/bin/bash
+
+2.
+搜索passwd文件的root关键字开头的所有行的第7列和第1列
+输入：awk -F : '/^root/{print$1","$7}' passwd
+输出：root,/bin/bash
+
+3.
+BEGIN在所有数据执行之前执行，END在所有数据执行之后执行
+输入：awk -F : 'BEGIN{print "user,shell"} {print $1","$7} END{print "dahaige,/bin/zui"} ' passwd
+输出：
+user,shell
+root,/bin/bash
+...
+xxx,/bin/bash
+dahaige,/bin/zui
+
+4.
+FILENAME, NR
+输入：awk -F : '{print "filename:" FILENAME }'
+输出：
+filename:passwd
+...
+filename:passwd
+
+5.
+输入：awk -F : '{print "filename:" FILENAME " 行号:" NR " 列数:" NF}' passwd
+输出：
+filename:passwd 行号:1 列数:7
+...
+filename:passwd 行号:55 列数:7
+
+6.
+输出ifconfig的空行所在的行号
+输入：ifconfig | awk '/^$/{print NR}'
+输出：
+10
+19
+
+输出利用空格切割文件，输出ifconfig的第一列
+输入：ifconfig | awk -F " " '//{print $1}'
+输出：
+ens33:
+inet
+inet6
+ether
+RX
+RX
+TX
+TX
+device
+
+lo:
+inet
+inet6
+loop
+RX
+RX
+TX
+TX
+
+

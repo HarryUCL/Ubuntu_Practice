@@ -1,0 +1,6 @@
+修改主机明：指令
+此时主机名是hamster-virtual-machine
+hamster@hamster-virtual-machine:~$ sudo hostnamectl --static set-hostname ubuntu
+现在的主机名是ubuntu
+
+如果将Xshell的会话属性的连接的主机（H）从192.168.137.101改成ubuntu。需要设置windows的host映射。

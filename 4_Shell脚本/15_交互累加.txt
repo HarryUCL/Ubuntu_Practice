@@ -1,0 +1,15 @@
+案例一：
+#!/bin/bash
+
+function sum()
+{
+	s=0
+	for (( i=0; i<=$1 ; i++));
+	do
+		s=$[$s+$i]
+	done
+	echo "累加最终的值为：$s"
+}
+
+read -p "请输入你的数字：" n
+sum $n

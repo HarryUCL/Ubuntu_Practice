@@ -1,0 +1,19 @@
+netstat显示网络信息和端口占用
+输入：netstat
+输出：
+激活Internet连接 (w/o 服务器)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 ubuntu:ssh              192.168.137.1:51152     ESTABLISHED
+tcp        0      0 ubuntu:33774            mirror.xtom.com.hk:http TIME_WAIT  
+tcp        0      0 ubuntu:ssh              192.168.137.1:61421     ESTABLISHED
+tcp        0      0 ubuntu:36360            101.6.15.130:http       TIME_WAIT  
+活跃的UNIX域套接字 (w/o 服务器)
+Proto RefCnt Flags       Type       State         I-Node   路径
+unix  3      [ ]         数据报  已连接     1281763 
+
+上面ubuntu:ssh就是XShell连接占用的网络端口项
+
+查看该进程网络信息
+net -anp | grep xxx
+查看网络端口的占用信息
+net -nlp | grep xxx

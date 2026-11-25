@@ -1,0 +1,33 @@
+1.
+输入：
+vim parameter.sh
+
+2.写shell 脚本
+vim编辑shell脚本
+$0：文件本身
+$1, $2: 传参如apple, banana
+$n: 
+$#: 传参个数
+写入：
+#!/bin/bash
+echo "===========$n==========="
+echo $0
+echo $1
+echo $2
+echo ${10}
+echo "===========$#==========="
+
+echo $#
+
+3.执行和传参
+1为传入参数
+输入：bash parameter.sh 1
+输出：
+======================
+parameter.sh
+1
+
+
+===========1===========
+1
+

@@ -1,0 +1,12 @@
+新增用户组：
+groupadd 组名
+
+添加一个xitianqvjing组：
+sudo groupadd xitianqvjing
+
+删除用户组：
+groupdel 组名
+
+修改组名：
+groupmod -n
+输入：sudo groupmod -n xitian xitianqvjing

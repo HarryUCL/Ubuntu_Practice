@@ -1,0 +1,18 @@
+cat语法：
+进入etc文件
+cd /etc/
+打开services文件，-n表示显示行号
+cat -n services
+打开ucf.conf
+cat ucf.conf
+
+more文件内容分屏查看器：
+查看services文件，并且分页查看
+more services
+
+less分屏显示文件内容：
+专开页面查看
+less services
+
+tail 输出文件尾部内容
+和cat一样，但从尾部开始查看

@@ -1,0 +1,5 @@
+halt -h: 关闭系统，不断电，挂起状态。
+poweroff: 关闭系统，并且断电。
+reboot -r: 重启
+sudo shuntdown -h 1: 一分钟关机
+sudo shutdown -c: 取消关机

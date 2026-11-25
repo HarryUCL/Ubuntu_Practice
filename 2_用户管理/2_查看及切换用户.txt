@@ -1,0 +1,16 @@
+更改tangseng密码：
+sudo passwd tangseng
+
+确认用户tangseng是否存在：
+输入：id tangseng
+输出： uid=1001(tangseng) gid=1001(tangseng) 组=1001(tangseng)
+
+切换用户tangseng：
+输入：su tangseng
+
+查看环境变量
+输入：echo $PATH
+输出：/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+退出用户
+输入：exit

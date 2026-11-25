@@ -1,0 +1,13 @@
+1.
+chown改变所有者
+-R 递归操作
+将software的所有者从root改成hamster
+hamster@hamster-virtual-machine:/opt$ sudo chown hamster software
+hamster@hamster-virtual-machine:/opt$ ll
+drwxr-xr-x  2 hamster root 4096 11月 23 18:54 software/
+
+2.
+改变所属组chgrp
+hamster@hamster-virtual-machine:/opt$ sudo chgrp xitian software
+hamster@hamster-virtual-machine:/opt$ ll
+drwxr-xr-x  2 hamster xitian 4096 11月 23 19:02 software/

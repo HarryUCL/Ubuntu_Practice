@@ -1,0 +1,10 @@
+mysql框架，赋予其他用户读的权限
+
+1. 创建mysql文件夹
+mkdir mysql
+2. 添加mysql用户,密码123456
+sudo adduser mysql
+3. mysql文件权限
+sudo chmod mysql:mysql mysql
+
+redis同理

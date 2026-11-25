@@ -1,0 +1,54 @@
+1.
+Linux不同用户的权限不同。为了系统安全，不同用户访问同一文件的权限不同。
+
+0首位 表示类型
+1-3位 表示属主类型（user）
+4-6位表示属组类型（group）
+7-9位表示其它用户权限（other）
+
+r:可读
+w:可写
+x:可执行
+
+2.
+查看/etc/profile的权限，结果是-rw-r--r--
+hamster@hamster-virtual-machine:~/桌面$ ll
+总计 12
+-rw-r--r--  1 hamster hamster  582 11月 23 18:12 profile
+
+3.
+为user添加x权限
+hamster@hamster-virtual-machine:~/桌面$ chmod u+x profile
+输出：
+hamster@hamster-virtual-machine:~/桌面$ ll
+-rwxr--r--  1 hamster hamster  582 11月 23 18:12 profile*
+
+4.
+为group添加w权限
+hamster@hamster-virtual-machine:~/桌面$ chmod g+w profile
+输出：
+hamster@hamster-virtual-machine:~/桌面$ ll
+-rwxrw-r--  1 hamster hamster  582 11月 23 18:12 profile*
+
+5.
+为其它用户添加x权限
+hamster@hamster-virtual-machine:~/桌面$ chmod +x profile
+输出：
+hamster@hamster-virtual-machine:~/桌面$ ll
+-rwxrwxr-x  1 hamster hamster  582 11月 23 18:12 profile*
+
+6.
+取消组，其它用户执行权限
+hamster@hamster-virtual-machine:~/桌面$ chmod g-x profile
+hamster@hamster-virtual-machine:~/桌面$ chmod o-x profile
+输出：
+hamster@hamster-virtual-machine:~/桌面$ ll
+-rwxrw-r--  1 hamster hamster  582 11月 23 18:12 profile*
+
+7.数字mod方式改权限
+chmod [mode=764] 文件或目录
+
+主权限：rwx  4+2+1=7
+组权限：rw-  4+2=6
+其它权限:r--  4=4
+

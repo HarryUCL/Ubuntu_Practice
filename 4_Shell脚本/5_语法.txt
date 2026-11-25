@@ -1,0 +1,40 @@
+1.
+判断2是否大于等于1
+输入：test 2 -ge 1
+或者 [ 2 -ge 1 ]
+echo $?
+输出：0
+
+判断2是否大于等于3
+输入：test 2 -ge 3
+或者 [ 2 -ge 3 ]
+echo $?
+输出：1
+
+2.数值比较关键词
+-eq等于
+-lt小于
+-gt大于
+-ne不等于
+-le小于等于
+-ge大于等于
+
+3.判断权限 -r -w-x
+输入: [ -r group.txt ]
+echo $?
+输出：
+0
+
+4.判断文件存在-e
+
+5.多条件判断
+&&前一条命令成功后，执行后一条
+|| 上一命令失败，执行后一条
+
+6.例子
+输入：test hamster && echo OK || echo notOK
+输出：OK
+输入：test && echo || echo notOK
+输出：notOK
+
+

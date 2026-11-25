@@ -1,0 +1,4 @@
+停止防火墙
+sudo systemctl stop ufw
+开启防火墙
+sudo systemctl start ufw

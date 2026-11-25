@@ -1,0 +1,28 @@
+1.添加用户张总，密码123456：
+sudo adduser zhangzong
+2.给张总sudo权限：
+sudo usermod -aG sudo zhangzong
+3.添加用户小张，密码123456：
+sudo adduser xiaozhang
+4.创建嵌入式组
+sudo groupadd qianrushi
+5.将小张加入嵌入式附加组
+sudo usermod -aG qianruhsi xiaozhang
+6.创建嵌入式目录
+sudo mkdir qianrushi
+7.嵌入式目录的文件所有者归属张总，所有组归属嵌入式
+sudo chown zhangzong:qianrushi qianrushi/
+8. 张总：在嵌入式目录中加入嵌入式机密文件
+touch qianrushijimi.txt
+9. 嵌入式文件的权限改成754：
+chmod 754 qianrushijimi.txt
+10.vim编辑嵌入式机密文件, 写入命令，权限754：
+vim qianrushijimi.txt
+i键
+echo "qianrushijimi"
+esc + :wq
+chmod 754 qianrushijimi.txt
+11. 张总用ubuntu GUI 操作。为小张新建XShell会话
+用户身份验证-登录提示符中，输入用户名和密码
+设置外观
+设置用户名和主机（192.168.137.101）

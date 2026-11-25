@@ -1,0 +1,11 @@
+每个用户有一个主组和若干附加组。
+
+添加用户主组
+usermod -g
+输入：sudo usermod -g xitian wokong
+
+添加用户附加组
+usermod -aG 组名 用户名
+
+从组移除用户
+deluser 组 用户

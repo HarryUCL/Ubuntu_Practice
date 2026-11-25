@@ -1,0 +1,33 @@
+1. 查看磁盘空间
+df
+显示GB，MB等格式
+df -h
+
+2.
+输入:df -h
+输出：
+文件系统        大小  已用  可用 已用% 挂载点
+tmpfs           387M  2.1M  385M    1% /run
+/dev/sda3        24G   14G  9.0G   61% /
+tmpfs           1.9G     0  1.9G    0% /dev/shm
+tmpfs           5.0M  4.0K  5.0M    1% /run/lock
+/dev/sda2       512M  6.1M  506M    2% /boot/efi
+tmpfs           387M  180K  387M    1% /run/user/1000
+
+3.
+查看磁盘占用，4096是文件夹的磁盘空间大小
+输入： ll
+输出：
+drwxr-xr-x  3 hamster hamster 4096 11月 24 03:50 ./
+drwxr-x--- 14 hamster hamster 4096 11月 24 02:36 ../
+-rw-rw-r--  1 hamster hamster  499 11月 24 02:48 1.tar.gz
+drwxrwxr-x  2 hamster hamster 4096 11月 24 02:46 大话西游/
+-rwxrw-r--  1 hamster hamster    0 11月 23 18:38 group.txt*
+-rwxrw-r--  1 hamster hamster  582 11月 23 18:12 profile*
+
+4. 查看文件和目录的磁盘使用空间
+大话西游的大小是4Kb
+du -a 文件夹 可以显示文件夹里的一切
+输入：du 大话西游
+输出：4	大话西游
+

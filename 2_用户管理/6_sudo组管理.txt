@@ -1,0 +1,12 @@
+设置普通用户有root权限
+将meihongwang更名为sunwukong
+sudo usermod -l sunwukong meihouwang
+sudo usermod -d /home/sunwukong -m 
+
+修改配置文件
+wukong被创建后是没有sudo权限的
+
+增加wukong的sudo权限
+修改/etc/sudoers文件夹，修改第50行为
+%sudo ALL=(ALL:ALL) NOPASSWD:ALL
+sudo usermod -aG sudo wukong

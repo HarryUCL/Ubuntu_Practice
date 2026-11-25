@@ -1,0 +1,22 @@
+\\ 输出
+\n 换行
+\ 制表
+
+echo的使用
+输入：echo hello world
+输出 hello world
+
+使用符号语法
+输入：echo -e "hello\n world"
+输出：hello
+world
+
+-e 符号语法语法+双引号
+
+输出冲定向>
+追加>>
+ls -l > 文件 将列表的内容写入a.txt中
+ls -al >> 文件 将列表内容加入文件aa.txt的末尾
+cat 文件1 > 文件2 将文件1的内容覆盖到文件2中
+echo "内容" >> 文件  
+

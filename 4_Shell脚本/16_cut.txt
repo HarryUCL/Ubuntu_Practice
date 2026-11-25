@@ -1,0 +1,28 @@
+1.
+写入文件：
+vim cut.txt
+内容：
+dong shen
+guan zhen
+wo wol
+lai lail
+le lel
+
+2.
+以空格为界，切割并输出cut.txt的第一/二部分
+输入：cut -d " " -f 1 cut.txt
+输出：
+dong
+guan
+wo
+lai
+le
+
+3切割并输出第二列字符
+输入：cut -c 2 cut.txt
+输出：
+o
+u
+o
+a
+e

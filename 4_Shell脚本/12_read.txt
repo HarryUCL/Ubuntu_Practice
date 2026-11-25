@@ -1,0 +1,10 @@
+1.
+输入：
+vim read.sh
+-p:指定读取值的提示符
+-t:等待时间
+读取7秒内输入的变量，写入：
+#!/bin/bash
+
+read -t 7 -p "Enter your name in 7 seconds :" NN
+echo $NN

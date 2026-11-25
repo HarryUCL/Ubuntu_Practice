@@ -1,0 +1,12 @@
+Shell是一个命令解释器，它接收应用程序/用户命令，调用系统的内核。
+bash是shell脚本解析器。
+
+创建且打开Shell脚本
+vim helloworld.sh
+
+写入
+#!/bin/bash
+echo "Hello, World"
+
+运行Shell脚本
+sh helloworld.sh

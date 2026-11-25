@@ -1,0 +1,75 @@
+OpenSSH是Linux里用于连接本地电脑和虚拟机的一项服务。
+阶段一：跟随尚硅谷教程
+我初次用XShell时，创建了一个会话连接虚拟机。方法如下：新建会话后，输入虚拟机IPv4地址（192.168.137.101），USER ID，虚拟机Password。
+打开会话后，显示和虚拟机连接失败。
+
+阶段二：和ChatGPT定位问题
+我上报了XShell中显示连接失败的系统答复。ChatGPT让我到WindowsPowerShell中发指令检查：
+PS C:\Users\pc> ping 192.168.137.101
+Pinging 192.168.137.101 with 32 bytes of data:
+Reply from 192.168.137.101: bytes=32 time<1ms TTL=64
+Reply from 192.168.137.101: bytes=32 time=1ms TTL=64
+Reply from 192.168.137.101: bytes=32 time=1ms TTL=64
+Reply from 192.168.137.101: bytes=32 time=1ms TTL=64
+
+Ping statistics for 192.168.137.101:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+PS C:\Users\pc> Test-NetConnection 192.168.137.101 -port 22
+
+警告: TCP connect to (192.168.137.101 : 22) failed
+ComputerName           : 192.168.137.101
+RemoteAddress          : 192.168.137.101
+RemotePort             : 22
+InterfaceAlias         : VMware Network Adapter VMnet8
+SourceAddress          : 192.168.137.1
+PingSucceeded          : True
+PingReplyDetails (RTT) : 0 ms
+TcpTestSucceeded       : False
+
+由此可知TCP 22 端口连接失败，但是VMware 网络联通性是成功的。
+
+阶段性三：检查SSH
+检查SSH服务：
+hamster@hamster-virtual-machine:~/桌面$ dpkg -l | grep openssh
+ii  openssh-client                             1:8.9p1-3ubuntu0.10                               amd64        secure shell (SSH) client, for secure access to remote machines
+由此可知，Ubuntu虚拟机只安装了OPENSSH Client，没有OPENSSH Server。
+
+阶段四：安装SSH服务端
+hamster@hamster-virtual-machine:~/桌面$ sudo apt update
+hamster@hamster-virtual-machine:~/桌面$ sudo apt install openssh-server -y
+
+hamster@hamster-virtual-machine用户是普通用户，但sudo让系统以管理员权限执行指令。
+apt是软件包管理器。
+update 更新软件包目录。
+-y 自动确认如 Do you want to continue? [Y/n]
+思路是1.更新目录。2.解析依赖后下载和安装文件。
+
+阶段四 核实无误
+启动SSH服务，并设置开机自启动
+hamster@hamster-virtual-machine:~/桌面$ sudo systemctl enable --now ssh
+检查服务状态
+hamster@hamster-virtual-machine:~/桌面$ sudo systemctl status ssh
+检查端口监听
+hamster@hamster-virtual-machine:~/桌面$ sudo ss -tlnp | grep :22
+ss: Socket Statistics. 查看网络连接信息。输出非常多，需要参数筛选。
+-t: 只显示TCP套接字。因为SSH默认使用TCP。
+-l: 套接字，表示监听。
+-n: 表示数字形式的地址和端口。如0.0.0.0:22
+-p: 进程。
+ | ：管道符号。首先执行ss -tlnp，获取输出，最后传给下一个命令。
+grep: 22 :筛选包含22的文本行。
+最终取得: 22端口相关信息。
+
+0.0.0.0是IPv4通配的监听地址，表示所有IPv4接口
+ps aux | grep python
+aux:
+a: 与终端关联的进程。
+u: 面向用户的进程。
+x: 包含没有关联终端的进程。
+
+kill 1024
+结束PID为1024的进程
+
+

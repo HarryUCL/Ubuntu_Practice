@@ -1,0 +1,11 @@
+cron服务默认开启
+1.
+查询定时任务
+crontab -l
+编辑定时任务
+crontab -e
+EDITOR环境变量选择crontab为环境编辑器
+EDITOR=vim crontab -e
+写入
+*/1 * * * * /bin/echo "11" >> /home/hamster/桌面/group.txt
+此时可以监听group.txt，每分钟输出11

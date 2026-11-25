@@ -1,0 +1,16 @@
+mkdir：创建目录
+-p: 创建多层目录
+
+例子：
+mkdir xiyouji
+mkdir -p xiyouji/qvjing/tudi
+cd xiyouji
+
+touch: 创建文件
+例子：
+touch qujing/tudi/sunwukong.txt
+
+复制文件或目录：
+cp -r qujing/ ~/
+-r: 递归复制目录
+~：家目录

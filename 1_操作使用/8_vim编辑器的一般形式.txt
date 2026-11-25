@@ -1,0 +1,31 @@
+我在Docker项目里使用过vim来查看和编辑过Dockerfile
+
+XShell输入vim即可进入vim编辑器。
+
+vim 打开文件（一般模式）
+输入：vim profile
+vim专门页面输出：# /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
+# and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
+
+if [ "${PS1-}" ]; then
+  if [ "${BASH-}" ] && [ "$BASH" != "/bin/sh" ]; then
+    # The file bash.bashrc already sets the default PS1.
+    # PS1='\h:\w\$ '
+    if [ -f /etc/bash.bashrc ]; then
+      . /etc/bash.bashrc
+
+复制语法
+yy：复制当前行
+y2y：复制当前行到后2行
+
+粘贴：
+p：箭头移动到目的地粘贴
+
+撤销：
+u: 撤销上一步。
+
+删除
+dd: 删除当前行
+
+剪切：
+x:剪切一个字母

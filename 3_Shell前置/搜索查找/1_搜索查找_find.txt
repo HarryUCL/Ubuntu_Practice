@@ -1,0 +1,15 @@
+寻找以".txt"结尾的文件
+find ./ -name "*.txt"
+
+寻找zhangzong文件所有者的文件
+hamster@hamster-virtual-machine:/opt$ find ./ -user zhangzong
+./qianrushi
+./qianrushi/qianrushi.txt
+./qianrushi/qianrushijimi.txt
+
+寻找所有大小大于200字节的文件
+find ./ -size +200c
+
+寻找所有大小大于200kb的文件
+find ./ -size +200k
+

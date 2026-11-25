@@ -1,0 +1,26 @@
+if判断
+1.格式
+if [ 条件 ]
+then
+程序
+elif [ 条件 ]
+then
+程序
+else
+程序
+fi
+
+2.
+vim 写一则if脚本
+输入：vim if.sh
+写入:
+#!/bin/bash
+if [ $1 -eq 1 ] 
+then
+        echo "bangzhang zhen shuai"
+elif [ $1 -eq 2 ]
+then
+        echo "cls zhen mei"
+fi
+输入：./if.sh 1
+输出：bangzhang zhen shuai
